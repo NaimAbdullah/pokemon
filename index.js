@@ -152,3 +152,107 @@ let data = {
   ],
   weight: 69,
 };
+
+ // Challenege 1:
+ const height = data.height;
+ const weight = data.weight;
+ const result = `Height: ${height}, Weight: ${weight}`;
+ console.log(result);
+ 
+ // Challenge 2:
+ 
+ const heightInt = parseInt(data.height);
+ const weightInt = parseInt(data.weight);
+ const bmi = weightInt / heightInt;
+ console.log(bmi);
+ 
+ // Challenge 3:
+ 
+ const pokeName = data.name;
+ const nameLength = pokeName.length;
+ const upperCaseName = pokeName.toUpperCase();
+ console.log({ nameLength, upperCaseName });
+ 
+ // Challenge 4:
+ 
+ const hasBulba = data.name.includes("bulba");
+ console.log(hasBulba);
+ 
+ // Challenge 5:
+ 
+ const firstLetters = data.name.substring(0,2);
+ const endLetters = data.name.substring(data.name.length - 2);
+ const newName = firstLetters + endLetters;
+ console.log(newName);
+ 
+ // Challenge 6:
+ 
+ const nameArray = [newName];
+ console.log(nameArray);
+ 
+ // Challenge 7:
+ 
+ data.types.forEach(type =>{
+     console.log(type.name);
+ });
+ 
+ // Challenge 8:
+ 
+ const isArray = Array.isArray(data.abilities);
+ console.log(isArray);
+ 
+ // Challenge 9:
+ 
+ const lastAbility = data.abilities[data.abilities.length - 1].name;
+ console.log(lastAbility);
+ 
+ // Challenge 10:
+ 
+ const lastAbilityObject = data.abilities.pop();
+ data.abilities.push(lastAbilityObject);
+ 
+ // Challenge 11:
+ 
+ for(const stat of data.stats){
+     console.log(stat.base_stat);
+ }
+ 
+ // Challenge 12:
+ 
+ const filteredStats = data.stats.filter((stat) => stat.base_stat > 47);
+ console.log(filteredStats);
+ 
+ // Challenge 13:
+ 
+ const reversedStats = data.stats.map((stat) => stat.base_stat).reverse();
+ const combinedStats = reversedStats.join("");
+ console.log(combinedStats);
+ 
+ // Challenge 14:
+ 
+ const firstTwoStats = data.stats.map((stat) => stat.base_stat).slice(0, 2);
+ console.log(firstTwoStats);
+ 
+ // Challenge 15:
+ 
+ data.stats[0].base_stat = "Naim";
+ 
+ // Challenge 16:
+ 
+ Object.entries(data).forEach(([key, value]) => {
+     console.log(key, value);
+   });
+ 
+ // Challenge 17:
+ 
+ const avatar = document.querySelector('#pokemon-avatar');
+ const pok_name = document.querySelector('#pokemon-name');
+ const info = document.querySelector('#info');
+ const name = data.name;
+ const url = data.sprites.front_default;
+ avatar.src = url;
+ pok_name.innerHTML = name;
+ info.innerHTML = `
+   <span> Height ${height}</span> -
+   <span> Weight ${weight}</span>
+ `;
